@@ -30,6 +30,7 @@ class __TwigTemplate_a7c678640d1e19672b9469dbfe8c632c extends Template
             'title' => [$this, 'block_title'],
             'stylesheets' => [$this, 'block_stylesheets'],
             'javascripts' => [$this, 'block_javascripts'],
+            'header' => [$this, 'block_header'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -57,18 +58,22 @@ class __TwigTemplate_a7c678640d1e19672b9469dbfe8c632c extends Template
         // line 8
         echo "        ";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 11
-        echo "
+        // line 13
+        echo "            
+
         ";
-        // line 12
-        $this->displayBlock('javascripts', $context, $blocks);
         // line 15
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 18
         echo "    </head>
     <body>
         ";
-        // line 17
+        // line 20
+        $this->displayBlock('header', $context, $blocks);
+        // line 23
+        echo "        ";
         $this->displayBlock('body', $context, $blocks);
-        // line 18
+        // line 24
         echo "    </body>
 </html>
 ";
@@ -113,6 +118,14 @@ class __TwigTemplate_a7c678640d1e19672b9469dbfe8c632c extends Template
         echo "            ";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_link_tags')->getCallable()("app"), "html", null, true);
         echo "
+            <link rel=\"stylesheet\" href=\"";
+        // line 10
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/bootstrap.min.css"), "html", null, true);
+        echo "\" />
+            <link rel=\"stylesheet\" href=\"";
+        // line 11
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/scss/_variables.scss"), "html", null, true);
+        echo "\" />   
         ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -122,7 +135,7 @@ class __TwigTemplate_a7c678640d1e19672b9469dbfe8c632c extends Template
 
     }
 
-    // line 12
+    // line 15
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -132,7 +145,7 @@ class __TwigTemplate_a7c678640d1e19672b9469dbfe8c632c extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 13
+        // line 16
         echo "            ";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_script_tags')->getCallable()("app"), "html", null, true);
         echo "
@@ -145,7 +158,30 @@ class __TwigTemplate_a7c678640d1e19672b9469dbfe8c632c extends Template
 
     }
 
-    // line 17
+    // line 20
+    public function block_header($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
+
+        // line 21
+        echo "            ";
+        $this->loadTemplate("partials/_header.html.twig", "base.html.twig", 21)->display($context);
+        // line 22
+        echo "        ";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 23
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -170,7 +206,7 @@ class __TwigTemplate_a7c678640d1e19672b9469dbfe8c632c extends Template
 
     public function getDebugInfo()
     {
-        return array (  149 => 17,  136 => 13,  126 => 12,  113 => 9,  103 => 8,  84 => 5,  72 => 18,  70 => 17,  66 => 15,  64 => 12,  61 => 11,  58 => 8,  53 => 5,  47 => 1,);
+        return array (  185 => 23,  175 => 22,  172 => 21,  162 => 20,  149 => 16,  139 => 15,  127 => 11,  123 => 10,  118 => 9,  108 => 8,  89 => 5,  77 => 24,  74 => 23,  72 => 20,  68 => 18,  66 => 15,  62 => 13,  59 => 8,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -184,13 +220,19 @@ class __TwigTemplate_a7c678640d1e19672b9469dbfe8c632c extends Template
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
+            <link rel=\"stylesheet\" href=\"{{ asset('assets/css/bootstrap.min.css') }}\" />
+            <link rel=\"stylesheet\" href=\"{{ asset('assets/scss/_variables.scss') }}\" />   
         {% endblock %}
+            
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
     <body>
+        {% block header %}
+            {% include \"partials/_header.html.twig\" %}
+        {% endblock %}
         {% block body %}{% endblock %}
     </body>
 </html>
