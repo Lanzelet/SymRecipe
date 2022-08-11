@@ -156,11 +156,13 @@ class SanitizerConfig
     }
 
     /**
-     * @param ParamConfigurator|list<ParamConfigurator|mixed> $value
+     * Allows only a given list of hosts to be used in links href attributes.
+     * @default null
+     * @param ParamConfigurator|mixed $value
      *
      * @return $this
      */
-    public function allowedLinkHosts(ParamConfigurator|array $value): static
+    public function allowedLinkHosts(mixed $value = NULL): static
     {
         $this->_usedProperties['allowedLinkHosts'] = true;
         $this->allowedLinkHosts = $value;
@@ -196,11 +198,13 @@ class SanitizerConfig
     }
 
     /**
-     * @param ParamConfigurator|list<ParamConfigurator|mixed> $value
+     * Allows only a given list of hosts to be used in media source attributes (img, audio, video, ...).
+     * @default null
+     * @param ParamConfigurator|mixed $value
      *
      * @return $this
      */
-    public function allowedMediaHosts(ParamConfigurator|array $value): static
+    public function allowedMediaHosts(mixed $value = NULL): static
     {
         $this->_usedProperties['allowedMediaHosts'] = true;
         $this->allowedMediaHosts = $value;

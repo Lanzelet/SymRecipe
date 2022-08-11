@@ -54,6 +54,34 @@ return [[
 '[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%23addLink' => 1,
 'Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%24container' => 0,
 '[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%24container' => 1,
+'App%5CController%5CHomeController' => 0,
+'[C]App%5CController%5CHomeController' => 1,
+'App%5CController%5CHomeController%23index' => 2,
+'[C]App%5CController%5CHomeController%23index' => 1,
+'App%5CEntity%5CIngredient' => 0,
+'[C]App%5CEntity%5CIngredient' => 1,
+'App%5CEntity%5CIngredient%23getId' => 0,
+'[C]App%5CEntity%5CIngredient%23getId' => 1,
+'App%5CEntity%5CIngredient%23getName' => 0,
+'[C]App%5CEntity%5CIngredient%23getName' => 1,
+'App%5CEntity%5CIngredient%23setName' => 0,
+'[C]App%5CEntity%5CIngredient%23setName' => 1,
+'App%5CEntity%5CIngredient%23getPrice' => 0,
+'[C]App%5CEntity%5CIngredient%23getPrice' => 1,
+'App%5CEntity%5CIngredient%23setPrice' => 0,
+'[C]App%5CEntity%5CIngredient%23setPrice' => 1,
+'App%5CEntity%5CIngredient%23getCreatedAt' => 0,
+'[C]App%5CEntity%5CIngredient%23getCreatedAt' => 1,
+'App%5CEntity%5CIngredient%23setCreatedAt' => 0,
+'[C]App%5CEntity%5CIngredient%23setCreatedAt' => 1,
+'App%5CEntity%5CIngredient%24id' => 0,
+'[C]App%5CEntity%5CIngredient%24id' => 1,
+'App%5CEntity%5CIngredient%24name' => 0,
+'[C]App%5CEntity%5CIngredient%24name' => 1,
+'App%5CEntity%5CIngredient%24price' => 0,
+'[C]App%5CEntity%5CIngredient%24price' => 1,
+'App%5CEntity%5CIngredient%24createdAt' => 0,
+'[C]App%5CEntity%5CIngredient%24createdAt' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 0,
 '[C]Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%23__construct' => 0,
@@ -604,6 +632,55 @@ return [[
 ], [
 
 0 => [],
-1 => 1659384133,
+1 => 1660245187,
+2 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/path',
+                ],
+                'methods' => [
+                    [],
+                ],
+                'schemes' => [
+                    [],
+                ],
+                'name' => [
+                    null,
+                ],
+                'requirements' => [
+                    [],
+                ],
+                'options' => [
+                    [],
+                ],
+                'defaults' => [
+                    [],
+                ],
+                'host' => [
+                    null,
+                ],
+                'condition' => [
+                    null,
+                ],
+                'priority' => [
+                    null,
+                ],
+                'env' => [
+                    null,
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
 
 ]];
