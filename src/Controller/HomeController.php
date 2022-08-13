@@ -9,11 +9,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/path")
+     * @Route("/path")s
      */
     #[Route('/', 'home.index', methods: ['GET'])]
     public function index(): Response
     {
-       return $this->render('home.html.twig');
+       return $this->render('pages/home.html.twig');
     }
 }
