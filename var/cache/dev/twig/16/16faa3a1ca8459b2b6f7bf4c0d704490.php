@@ -51,7 +51,10 @@ class __TwigTemplate_6a594b24ff5d3dd330db2334919ca957 extends Template
       <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">
         <ul class=\"navbar-nav me-auto\">
           <li class=\"nav-item\">
-            <a class=\"nav-link active\" href=\"#\">Accueil
+            <a class=\"nav-link active\" href=\"";
+        // line 12
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home.index");
+        echo "\">Accueil
               <span class=\"visually-hidden\">(current)</span>
             </a>
           </li>
@@ -59,9 +62,13 @@ class __TwigTemplate_6a594b24ff5d3dd330db2334919ca957 extends Template
             <a class=\"nav-link\" href=\"";
         // line 17
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ingredient.index");
-        echo "\">Ingrédients
-              
-            </a>
+        echo "\">Mes ingrédients</a>
+          </li>
+          <li class=\"nav-item\">
+            <a class=\"nav-link\" href=\"";
+        // line 20
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe.index");
+        echo "\">Mes recettes</a>
           </li>
         </ul>
       </div>
@@ -87,7 +94,7 @@ class __TwigTemplate_6a594b24ff5d3dd330db2334919ca957 extends Template
 
     public function getDebugInfo()
     {
-        return array (  61 => 17,  43 => 1,);
+        return array (  70 => 20,  64 => 17,  56 => 12,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -103,14 +110,15 @@ class __TwigTemplate_6a594b24ff5d3dd330db2334919ca957 extends Template
       <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">
         <ul class=\"navbar-nav me-auto\">
           <li class=\"nav-item\">
-            <a class=\"nav-link active\" href=\"#\">Accueil
+            <a class=\"nav-link active\" href=\"{{ path('home.index')}}\">Accueil
               <span class=\"visually-hidden\">(current)</span>
             </a>
           </li>
           <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"{{ path('ingredient.index')}}\">Ingrédients
-              
-            </a>
+            <a class=\"nav-link\" href=\"{{ path('ingredient.index')}}\">Mes ingrédients</a>
+          </li>
+          <li class=\"nav-item\">
+            <a class=\"nav-link\" href=\"{{ path('recipe.index')}}\">Mes recettes</a>
           </li>
         </ul>
       </div>

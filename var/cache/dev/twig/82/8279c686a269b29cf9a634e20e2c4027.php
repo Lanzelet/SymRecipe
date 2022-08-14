@@ -126,7 +126,7 @@ class __TwigTemplate_ea6077bc2096610bea3ffb4f9d8faa7c extends Template
         
             ";
         // line 24
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), "submit", [], "any", false, false, false, 24), 'row');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), "submit", [], "any", false, false, false, 24), 'row', ["label" => "Modifier mon ingredient"]);
         echo "
         
         ";
@@ -184,7 +184,7 @@ class __TwigTemplate_ea6077bc2096610bea3ffb4f9d8faa7c extends Template
             <div class=\"form_error\">{{ form_errors(form.price) }}</div> 
         </div>
         
-            {{ form_row(form.submit) }}
+            {{ form_row(form.submit, { 'label': 'Modifier mon ingredient' }) }}
         
         {{ form_end(form) }} 
 

@@ -68,13 +68,17 @@ class IngredientController extends AbstractController
         ]);
     }
     
-   
+   /**
+     * This controller show a form which modify an ingredient
+     *
+     * @param Ingredient $ingredient
+     * @param Request $request
+     * @param EntityManagerInterface $manager
+     * @return Response
+     */
     #[Route('/ingredient/edition/{id}', name: 'ingredient.edit', methods: ['GET', 'POST'] )]
-    public function edit(
-        Ingredient $ingredient, 
-        Request $request, 
-        EntityManagerInterface $manager
-        ) :Response // public function edit(IngredientRepository $repository, int $id) :Response
+    public function edit(Ingredient $ingredient, Request $request, EntityManagerInterface $manager) :Response 
+    // public function edit(IngredientRepository $repository, int $id) :Response
     { 
         //$ingredient = $repository->findOneBy(["id" => $id]);
         $form = $this->createForm(IngredientType::class, $ingredient);
@@ -98,7 +102,13 @@ class IngredientController extends AbstractController
         
     }
 
-    
+    /**
+     * This controller show a form which delete an ingredient
+     * 
+     * @param Ingredient $ingredient
+     * @param EntityManagerInterface $manager
+     * @return Reponse
+     */
     #[Route('ingredient/suppression/{id}', name: 'ingredient.delete', methods: ['GET'])]
     public function delete(Ingredient $ingredient, EntityManagerInterface $manager) :Response
     {

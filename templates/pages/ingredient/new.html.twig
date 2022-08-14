@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}SymRecipe - Mes ingrédients{% endblock %}
+{% block title %}SymRecipe - Nouveau ingrédient{% endblock %}
 
 {% block body %}
     <div class="container">
@@ -20,7 +20,7 @@
             <div class="form_error">{{ form_errors(form.price) }}</div> 
         </div>
         
-            {{ form_row(form.submit)}}
+            {{ form_row(form.submit, { 'label': 'Création de l\'ingredient' })}}
         
         {{ form_end(form) }}     
     </div>

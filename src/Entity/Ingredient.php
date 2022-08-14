@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\IngredientRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -31,12 +33,14 @@ class Ingredient
     #[Assert\NotNull()]
     private ?\DateTimeImmutable $createdAt = null;
 
+    
     /**
      * Constructor
      */
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable();
+       
     }
 
     public function getId(): ?int
@@ -75,8 +79,12 @@ class Ingredient
 
     public function setCreatedAt(\DateTimeImmutable $createdAt): self
     {
-        $this->createdAt = $createdAt;
+     $this->createdAt = $createdAt;
+     return $this;
+    }
 
-        return $this;
+    public function __toString()
+    {
+        return $this->name;
     }
 }

@@ -65,7 +65,7 @@ class __TwigTemplate_2923c98b9be23e8df3b60fa070d5dab5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "SymRecipe - Mes ingrédients";
+        echo "SymRecipe - Nouveau ingrédient";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -125,7 +125,7 @@ class __TwigTemplate_2923c98b9be23e8df3b60fa070d5dab5 extends Template
         
             ";
         // line 23
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 23, $this->source); })()), "submit", [], "any", false, false, false, 23), 'row');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 23, $this->source); })()), "submit", [], "any", false, false, false, 23), 'row', ["label" => "Création de l'ingredient"]);
         echo "
         
         ";
@@ -161,7 +161,7 @@ class __TwigTemplate_2923c98b9be23e8df3b60fa070d5dab5 extends Template
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}SymRecipe - Mes ingrédients{% endblock %}
+{% block title %}SymRecipe - Nouveau ingrédient{% endblock %}
 
 {% block body %}
     <div class=\"container\">
@@ -181,7 +181,7 @@ class __TwigTemplate_2923c98b9be23e8df3b60fa070d5dab5 extends Template
             <div class=\"form_error\">{{ form_errors(form.price) }}</div> 
         </div>
         
-            {{ form_row(form.submit)}}
+            {{ form_row(form.submit, { 'label': 'Création de l\\'ingredient' })}}
         
         {{ form_end(form) }}     
     </div>

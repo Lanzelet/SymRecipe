@@ -163,7 +163,7 @@ class __TwigTemplate_29a14fd6c178b112409785f12c9335fb extends Template
                   <td><a href=\"";
                 // line 41
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ingredient.edit", ["id" => twig_get_attribute($this->env, $this->source, $context["ingredient"], "id", [], "any", false, false, false, 41)]), "html", null, true);
-                echo "\" class=\"btn btn-info\">Editer</a></td>
+                echo "\" class=\"btn btn-info\">Modifier</a></td>
                   <td><a href=\"";
                 // line 42
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ingredient.delete", ["id" => twig_get_attribute($this->env, $this->source, $context["ingredient"], "id", [], "any", false, false, false, 42)]), "html", null, true);
@@ -259,7 +259,7 @@ class __TwigTemplate_29a14fd6c178b112409785f12c9335fb extends Template
                   <td> {{ ingredient.name}} </td>
                   <td> {{ ingredient.price}} </td>
                   <td> {{ ingredient.createdAt|date('d/m/Y') }} </td>
-                  <td><a href=\"{{ path('ingredient.edit', {id: ingredient.id}) }}\" class=\"btn btn-info\">Editer</a></td>
+                  <td><a href=\"{{ path('ingredient.edit', {id: ingredient.id}) }}\" class=\"btn btn-info\">Modifier</a></td>
                   <td><a href=\"{{ path('ingredient.delete', {id: ingredient.id}) }}\" class=\"btn btn-danger\">Supprimer</a></td>
               </tr> 
             {% endfor %}

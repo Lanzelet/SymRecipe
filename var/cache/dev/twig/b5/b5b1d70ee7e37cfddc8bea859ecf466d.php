@@ -91,7 +91,7 @@ class __TwigTemplate_13ae0a1443d33d77625b825293a2668a extends Template
     <h1 class=\"display-4\">Bienvenue sur SymRecipe</h1>
     <p class=\"lead\">SymRecipe est une application qui va te permettre de créer des recettes à base d'ingrédients que tu auras toi-même créer. 
     Tu pourras partager tes recettes à la communauté di site, ou bien les garder en privées.</p>
-    <p>Apprendre Symfony : 1:40:00/11:47:08</p>
+    <p>Apprendre Symfony : 3:04:18/11:47:08 => probleme voir pour faire un git pull</p>
     <hr class=\"my-4\">
     <p>Pour commencer, rendez-vous sur la page d'inscription pour utiliser l'appication.</p>
     <a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Inscription</a>
@@ -134,7 +134,7 @@ class __TwigTemplate_13ae0a1443d33d77625b825293a2668a extends Template
     <h1 class=\"display-4\">Bienvenue sur SymRecipe</h1>
     <p class=\"lead\">SymRecipe est une application qui va te permettre de créer des recettes à base d'ingrédients que tu auras toi-même créer. 
     Tu pourras partager tes recettes à la communauté di site, ou bien les garder en privées.</p>
-    <p>Apprendre Symfony : 1:40:00/11:47:08</p>
+    <p>Apprendre Symfony : 3:04:18/11:47:08 => probleme voir pour faire un git pull</p>
     <hr class=\"my-4\">
     <p>Pour commencer, rendez-vous sur la page d'inscription pour utiliser l'appication.</p>
     <a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Inscription</a>
