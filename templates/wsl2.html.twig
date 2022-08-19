@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commande WSL
+{% endblock %}
+
+{% block body %}
+Microsoft Corporation. Tous droits réservés.
+Utilisation : wsl.exe [Argument] [Options...] [Ligne de commande]
+Arguments pour l’exécution des fichiers binaires Linux :
+    Si aucune ligne de commande n’est fournie, wsl.exe démarre l’interpréteur de commandes par défaut.
+    --exec, -e <Ligne de commande>
+        Exécutez la commande spécifiée sans utiliser le shell Linux par défaut.
+    --
+        Transmettez la ligne de commande restante telle quelle.
+Options :
+    --cd <Répertoire>
+        Définit le répertoire spécifié comme répertoire de travail actuel.
+        Si ~ est utilisé, le chemin d’accès de l’utilisateur Linux est utilisé. Si la trajectoire commence
+        par un caractère /, celui-ci est interprété comme un chemin d’accès Linux absolu..
+        Autrement, la valeur doit être un chemin d’accès Windows absolu.
+    --distribution, -d <Distribution>
+        Exécutez la distribution spécifiée.
+    --user, -u <Nom d’utilisateur>
+        S’exécute en tant qu’utilisateur spécifié.
+    --system
+        Lance un Shell pour la distribution du système.
+Arguments de gestion du sous-système Windows pour Linux :
+    --help
+        Afficher les informations d’utilisation.
+    --install [Options]
+        Installer d’autres distributions de sous-système Windows pour Linux.
+        Pour obtenir une liste valide de distributions, utilisez « wsl --list --online ».
+        Options :
+            --distribution, -d [Argument]
+                Télécharge et installe une distribution par nom.
+                Arguments :
+                    Un nom de distribution valide (non sensible à la casse).
+                Exemples :
+                    wsl --install -d Ubuntu
+                    wsl --install --distribution Debian
+    --set-default-version <Version>
+        Change la version d’installation par défaut pour les nouvelles distributions.
+    --shutdown
+        Met fin immédiatement à toutes les distributions en cours d’exécution et à
+         l’ordinateur virtuel WSL 2
+         d’utilité légère.
+    --status
+        Afficher l’état du sous-système Windows pour Linux.
+    --update [Options]
+        Si aucune option n’est spécifiée, le noyau WSL 2 est mis à jour
+        vers la version la plus récente.
+        Options:
+            --rollback
+                Revenir à la version précédente du noyau WSL 2.
+Arguments pour la gestion des distributions dans le sous-système Windows pour Linux :
+    --export <Distribution> <Nom de fichier>
+        Exporte la distribution dans un fichier tar.
+        Le nom de fichier peut être-pour la sortie --for standard..
+    --import <Distribution> <Emplacement d’installation> <Nom de fichier> [Options]
+        Importe le fichier tar spécifié comme nouvelle distribution.
+        Le nom de fichier peut être pour une entrée standard.
+        Options :
+            --version <Version>
+                Spécifie la version à utiliser pour la nouvelle distribution.
+    --list, -l [Options]
+        Répertorie les distributions.
+        Options :
+            --all
+                Lister toutes les distributions, y compris les distributions qui sont
+                en cours d’installation ou de désinstallation.
+            --quiet, -q
+                Liste uniquement les distributions en cours d’exécution.
+            --quiet, -q
+                Afficher uniquement les noms de distribution.
+            --verbose, -v
+                Affiche les informations détaillées sur toutes les distributions.
+            --online, -o
+                Affiche une liste des distributions disponibles pour l’installation avec « wsl --install ».
+    --set-default, -s <Distribution>
+        Définit la distribution comme valeur par défaut.
+    --set-version <Distribution> <Version>
+        Modifie la version de la distribution spécifiée
+    --terminate, -t <Distribution>
+        Termine la distribution spécifiée.
+    --unregister <Distribution>
+        Annule l’inscription de la distribution et supprime le système de fichiers racine.
+    --mount <Disque>
+        Attache et monte un disque physique dans toutes les distributions WSL2.
+        Options :
+            --bare
+                Attacher le disque à la WSL2, mais ne pas le monter.
+            --type <Type>
+                Système de fichiers à utiliser lors du montage d’un disque. S’il n’est pas spécifié, la valeur par défaut est ext4.
+            --options <Options>
+                Options de montage supplémentaires.
+            --partition <Index>
+                Index de la partition à monter. Si elle n’est pas spécifiée, la valeur par défaut est le disque entier.
+    --unmount [Disque]
+        Démonte et détache un disque de toutes les distributions WSL2.
+        Démonte et détache tous les disques s’ils sont appelés sans argument.
+{% endblock %}

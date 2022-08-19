@@ -94,19 +94,35 @@ class __TwigTemplate_49e0b41f8e12b791d81aa161901352c0 extends Template
         // line 11
         if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 11, $this->source); })())) {
             // line 12
-            echo "\t\t\t<div class=\"alert alert-danger\">
+            echo "\t\t\t<div class=\"alert alert-danger mt-4\">
 \t\t\t\t";
             // line 13
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 13, $this->source); })()), "messageKey", [], "any", false, false, false, 13), twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 13, $this->source); })()), "messageData", [], "any", false, false, false, 13), "security"), "html", null, true);
             echo "
 \t\t\t</div>
-\t\t\t
 \t\t";
         }
-        // line 17
+        // line 16
+        echo "        ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 16, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 16));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 17
+            echo "            <div class=\"alert alert-success mt-4\">
+                ";
+            // line 18
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "
+            </div>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 21
         echo "
 \t\t<form action=\"";
-        // line 18
+        // line 22
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security.login");
         echo "\" method=\"post\" accept-charset=\"UTF-8\">
 
@@ -115,8 +131,8 @@ class __TwigTemplate_49e0b41f8e12b791d81aa161901352c0 extends Template
 \t\t\t<div class=\"form-group\">
 \t\t\t\t<label for=\"username\" class=\"form-label mt-4\">Adresse Email</label>
 \t\t\t\t<input type=\"email\" class=\"form-control\" id=\"username\" name=\"_username\" placeholder=\"exemple@symrecipe.org\" value=\"";
-        // line 24
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 24, $this->source); })()), "html", null, true);
+        // line 28
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 28, $this->source); })()), "html", null, true);
         echo "\">
 \t\t\t\t<small id=\"emailHelp\" class=\"form-text text-muted\">We'll never share your email with anyone else.</small>
 \t\t\t</div>
@@ -151,7 +167,7 @@ class __TwigTemplate_49e0b41f8e12b791d81aa161901352c0 extends Template
 
     public function getDebugInfo()
     {
-        return array (  119 => 24,  110 => 18,  107 => 17,  100 => 13,  97 => 12,  95 => 11,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  135 => 28,  126 => 22,  123 => 21,  114 => 18,  111 => 17,  106 => 16,  100 => 13,  97 => 12,  95 => 11,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -167,11 +183,15 @@ class __TwigTemplate_49e0b41f8e12b791d81aa161901352c0 extends Template
 \t\t<h1 class=\"mt-4\">Formulaire de connexion</h1>
 
 \t\t{% if error %}
-\t\t\t<div class=\"alert alert-danger\">
+\t\t\t<div class=\"alert alert-danger mt-4\">
 \t\t\t\t{{ error.messageKey|trans(error.messageData, 'security') }}
 \t\t\t</div>
-\t\t\t
 \t\t{% endif %}
+        {% for message in app.flashes('success') %}
+            <div class=\"alert alert-success mt-4\">
+                {{ message }}
+            </div>
+        {% endfor %}
 
 \t\t<form action=\"{{ path('security.login') }}\" method=\"post\" accept-charset=\"UTF-8\">
 
