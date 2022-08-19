@@ -63,7 +63,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * This Controller allow us to modifyit user's password
+     * This Controller allow us to modify user's password
      *
      * @param User $user
      * @param Request $request
@@ -86,10 +86,10 @@ class UserController extends AbstractController
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
             if($hasher->isPasswordValid($user, $form->getData()['plainPassword'])){
-                $user->setPlainPassword($hasher->hashPassword(
-                    $user,
+                $user->setUpdatedAt(new \DateTimeImmutable());
+                $user->setPlainPassword(
                     $form->getData()['newPassword']
-                ));
+                );
 
                 $manager->persist($user);
                 $manager->flush();
